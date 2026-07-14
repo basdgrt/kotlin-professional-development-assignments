@@ -5,7 +5,7 @@ plugins {
     kotlin("jvm") version "2.3.0"
 }
 
-group = "nl.freshminds"
+group = "nl.basdgrt"
 version = "1.0-SNAPSHOT"
 
 allprojects {

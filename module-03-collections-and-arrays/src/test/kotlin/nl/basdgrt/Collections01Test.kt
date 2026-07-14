@@ -1,0 +1,26 @@
+package nl.basdgrt
+
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+
+class Collections01Test {
+
+    @Test
+    fun `total amount of races in the 2023 season`() {
+        assertEquals(6, amountOfRacesIn2023(F1DataSet.races))
+    }
+
+    @Test
+    fun `all unique circuit names`() {
+        assertEquals(
+            setOf(
+                "Bahrain International Circuit",
+                "Jeddah Corniche Circuit",
+                "Albert Park Grand Prix Circuit",
+                "Baku City Circuit",
+                "Miami International Autodrome",
+                "Circuit de Monaco"
+            ), circuitNames(F1DataSet.races)
+        )
+    }
+}
