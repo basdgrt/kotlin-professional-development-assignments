@@ -36,5 +36,6 @@ allprojects {
     dependencies {
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
         testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+        testRuntimeOnly("org.junit.platform:junit-platform-launcher:$junitVersion")
     }
 }
