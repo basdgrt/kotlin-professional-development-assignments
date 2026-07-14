@@ -1,8 +1,5 @@
 package nl.freshminds
 
-import kotlinx.coroutines.async
-import kotlinx.coroutines.awaitAll
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlin.time.Duration.Companion.seconds
 
@@ -11,10 +8,8 @@ import kotlin.time.Duration.Companion.seconds
  * [PublishResult].
  */
 
-suspend fun publishMessages(messages: List<String>) = coroutineScope {
-    messages.map { message ->
-        async { PublishResult(publishMessage(message), message) }
-    }.awaitAll()
+suspend fun publishMessages(messages: List<String>): List<PublishResult> {
+    TODO()
 }
 
 data class PublishResult(

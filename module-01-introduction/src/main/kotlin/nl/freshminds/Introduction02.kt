@@ -10,12 +10,7 @@ package nl.freshminds
  * - Return the value of [input] as a String when it's not a multiple of 3 or 5.
  */
 fun fizzBuzz(input: Int): String {
-    return when {
-        input % 15 == 0 -> "FizzBuzz"
-        input % 5 == 0 -> "Buzz"
-        input % 3 == 0 -> "Fizz"
-        else -> input.toString()
-    }
+    TODO()
 }
 
 /**
@@ -25,7 +20,5 @@ fun fizzBuzz(input: Int): String {
  * Example output: 1, 2, FIZZ, 4, BUZZ
  */
 fun printFizzBuzzNumbers(n: Int) {
-    for (i in 1..n) {
-        println(fizzBuzz(i))
-    }
+    TODO()
 }

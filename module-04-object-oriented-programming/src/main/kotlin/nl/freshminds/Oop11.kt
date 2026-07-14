@@ -10,11 +10,8 @@ package nl.freshminds
  * Bonus points: Write [isHerbivore] as a single expression function.
  * Bonus points: Refactor [isHerbivore] to an extension function.
  */
-
-fun Dinosaur.isHerbivore() = when (this) {
-    Dinosaur.STEGOSAURUS -> true
-    Dinosaur.TRICERATOPS -> true
-    Dinosaur.TYRANNOSAURUS_REX -> false
+fun isHerbivore(dinosaur: Dinosaur): Boolean {
+    TODO()
 }
 
 enum class Dinosaur {

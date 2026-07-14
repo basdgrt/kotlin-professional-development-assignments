@@ -18,16 +18,12 @@ package nl.freshminds
  * ```
  */
 
-fun updateDatabase() = executeInTransaction {
-    saveName("Fresh Minds")
-    saveAge(3)
-    saveCity("Leiden")
-}
-
-fun executeInTransaction(fn: () -> String): String {
+fun updateDatabase(): String {
     TransactionManager.begin()
     return try {
-        fn()
+        saveName("Fresh Minds")
+        saveAge(3)
+        saveCity("Leiden")
         TransactionManager.commit()
     } catch (exception: Exception) {
         TransactionManager.rollback()

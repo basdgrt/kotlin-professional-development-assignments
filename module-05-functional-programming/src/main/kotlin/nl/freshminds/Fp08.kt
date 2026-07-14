@@ -6,9 +6,13 @@ package nl.freshminds
  * Refactor [processOrder] make use of a safe-call and scope function instead of the if statement.
  */
 fun processOrder(payment: Payment?) {
-    payment?.let { shipOrder(it) } ?: throw IllegalArgumentException("invalid payment")
+    if (payment != null) {
+        shipOrder(payment)
+    } else {
+        throw IllegalArgumentException("invalid payment")
+    }
 }
 
-fun shipOrder(payment: Payment): Unit = TODO("No need to implement this")
+fun shipOrder(payment: Payment): Unit = TODO()
 
 object Payment

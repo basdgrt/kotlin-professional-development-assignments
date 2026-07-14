@@ -1,7 +1,5 @@
 package nl.freshminds
 
-import java.util.*
-
 /**
  * There are no tests available for this assignment.
  *
@@ -16,31 +14,24 @@ import java.util.*
  * Uncomment the main function to validate your solution.
  */
 
-fun <T, R> memoize(block: (T) -> R): (T) -> R {
-    val cache = mutableMapOf<T, R>()
-    return { input ->
-        cache.getOrPut(input) { block(input) }
-    }
-}
-
-fun main() {
-    val squareFn = memoize<Int, Int> {
-        Thread.sleep(2000) // Simulate a long execution time
-        it * it
-    }
-
-    println(squareFn(5))
-    println(squareFn(10))
-    println(squareFn(5))
-    println(squareFn(10))
-
-    val uuidFromSeed = memoize<String, UUID> {
-        Thread.sleep(3000)
-        UUID.nameUUIDFromBytes(it.toByteArray())
-    }
-
-    println(uuidFromSeed("abc"))
-    println(uuidFromSeed("def"))
-    println(uuidFromSeed("abc"))
-    println(uuidFromSeed("def"))
-}
+//fun main() {
+//    val squareFn = memoize<Int, Int> {
+//        Thread.sleep(2000) // Simulate a long execution time
+//        it * it
+//    }
+//
+//    println(squareFn(5))
+//    println(squareFn(10))
+//    println(squareFn(5))
+//    println(squareFn(10))
+//
+//    val uuidFromSeed = memoize<String, UUID> {
+//        Thread.sleep(3000)
+//        UUID.nameUUIDFromBytes(it.toByteArray())
+//    }
+//
+//    println(uuidFromSeed("abc"))
+//    println(uuidFromSeed("def"))
+//    println(uuidFromSeed("abc"))
+//    println(uuidFromSeed("def"))
+//}

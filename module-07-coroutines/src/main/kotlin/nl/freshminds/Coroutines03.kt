@@ -1,9 +1,6 @@
 package nl.freshminds
 
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.joinAll
-import kotlinx.coroutines.launch
 import kotlin.time.Duration.Companion.seconds
 
 /**
@@ -16,14 +13,7 @@ import kotlin.time.Duration.Companion.seconds
  */
 
 suspend fun processStockUpdateEvent(stockUpdateEvent: StockUpdateEvent) {
-    coroutineScope {
-        with(stockUpdateEvent) {
-            updateDatabase(productId, amountInStock)
-            fetchCustomersOnWaitingList(productId).map { customerId ->
-                launch { emailCustomer(customerId) }
-            }.joinAll()
-        }
-    }
+
 }
 
 suspend fun updateDatabase(productId: Int, amountInStock: Int) {
@@ -33,7 +23,7 @@ suspend fun updateDatabase(productId: Int, amountInStock: Int) {
 
 suspend fun fetchCustomersOnWaitingList(productId: Int): List<CustomerId> {
     delay(2.seconds)
-    return when (productId) {
+    return when(productId) {
         1 -> listOf(CustomerId("a"), CustomerId("b"), CustomerId("c"), CustomerId("d"))
         10 -> listOf(CustomerId("f"), CustomerId("g"))
         100 -> listOf(CustomerId("r"))

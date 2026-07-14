@@ -17,20 +17,6 @@ package nl.freshminds
  * ```
  */
 
-fun retryUntilSuccess(amountOfRetries: Int, fn: () -> Int) {
-    repeat(amountOfRetries) {
-        if (fn.invoke() == 200) {
-            return
-        }
-    }
-    error("Max amount of retries has been reached")
-}
-
-fun main() {
-    retryUntilSuccess(7) { HttpClient.get() }
-    retryUntilSuccess(10) { HttpClient.post() }
-}
-
 object HttpClient {
     fun get() = if ((1..1000).random() > 750) 200 else 500
     fun post() = if ((1..1000).random() > 900) 200 else 500
