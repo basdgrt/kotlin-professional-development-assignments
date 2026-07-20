@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "2.3.0"
+    kotlin("jvm") version "2.4.10"
 }
 
 group = "nl.basdgrt"
@@ -31,7 +31,7 @@ allprojects {
         }
     }
 
-    val junitVersion = "6.0.2"
+    val junitVersion = "6.1.2"
 
     dependencies {
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
